@@ -1,3 +1,4 @@
+//test here - https://rithmschool.github.io/function-timer-demo/
 //slow one
 // counting Operations  => 5n+2 (5 times of n operations) + 2 (static operation)
 
