@@ -13,3 +13,14 @@ function sum(arr) {
     return total;
   }
 console.log(sum([1,2,3]));
+
+//space complexity of this fun is O(n) ,because it increase array size depends on n(input)
+
+function double(arr){
+    let result=[];
+    for (let i = 1; i <= arr.length; i++) {
+        result.push(i*2)
+    }
+    return result;
+}
+console.log(double([1,2,3]));
