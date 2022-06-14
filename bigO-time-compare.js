@@ -19,3 +19,10 @@
 
 
   console.log(answer)
+/**
+ * problem of time
+    different machines will record different times
+    same machines will record different times
+    for really fast or slow algorithm,we can't compare them each other easily.
+ */
+  
