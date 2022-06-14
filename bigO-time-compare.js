@@ -11,7 +11,7 @@
 //   }
 
 //fast one
-// counting Operations  => 3
+// counting Operations  => 3 or which mean O(1) because always perform 3 constant operations
   function addUpTo(n) {
     return n * (n + 1) / 2;
   }
