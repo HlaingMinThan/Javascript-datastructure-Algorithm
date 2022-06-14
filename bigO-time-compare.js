@@ -1,4 +1,6 @@
 //slow one
+// counting Operations  => 5n+2 (5 times of n operations) + 2 (static operation)
+
 // function addUpTo(n) {
 //     let total = 0;
 //     for (let i = 1; i <= n; i++) {
@@ -6,8 +8,9 @@
 //     }
 //     return total;
 //   }
-  
-  //fast one
+
+//fast one
+// counting Operations  => 3
   function addUpTo(n) {
     return n * (n + 1) / 2;
   }
