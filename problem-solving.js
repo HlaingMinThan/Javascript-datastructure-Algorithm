@@ -17,24 +17,30 @@
 ////BREAK IT DOWN & solve
  //simplify -> difficulty to check later -> how to check alphanumeric(0-1,a-z,A-Z) ????
 function charCount(string){
-    //make obj for ouput
     let output={};
-    //loop each char in string
-    for(let i=0;i<string.length;i++){
-        //change eachChar to lowerCase
-        let eachChar=string[i].toLowerCase();
-        //if eachChar is alphanumeric and eachChar count in output is greater than 0, increase that eachChar count
-        if(output[eachChar] > 0){
-            output[eachChar]=++output[eachChar];
+    for(let eachChar of string){
+        if(isAlphaNumeric(eachChar)){
+            eachChar=eachChar.toLowerCase();
+            //if output[eachChar] exists,increase it else,set as 1;
+            output[eachChar]=++output[eachChar] || 1;
         }
-        //if eachChar is alphanumeric and eachChar count in output is not exists,set eachChar count with 1
-        if(!output[eachChar] ){
-            output[eachChar]=1;
-        }
-        // if eachChar in output is not alphanumeric,do nothing
     }
-    //return output
     return output;
 }
 
-console.log(charCount("Aaaa"));
+//best performance rather than regular expression
+function isAlphaNumeric(str) {
+    var code, i, len;
+  
+    for (i = 0, len = str.length; i < len; i++) {
+      code = str.charCodeAt(i);
+      if (!(code > 47 && code < 58) && // numeric (0-9)
+          !(code > 64 && code < 91) && // upper alpha (A-Z)
+          !(code > 96 && code < 123)) { // lower alpha (a-z)
+        return false;
+      }
+    }
+    return true;
+  };
+
+console.log(charCount("A person walk into the garden"));
