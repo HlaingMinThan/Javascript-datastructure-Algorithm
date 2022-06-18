@@ -15,6 +15,7 @@
 
 
 ////BREAK IT DOWN & solve
+ //simplify -> difficulty to check later -> how to check alphanumeric(0-1,a-z,A-Z) ????
 function charCount(string){
     //make obj for ouput
     let output={};
@@ -22,15 +23,15 @@ function charCount(string){
     for(let i=0;i<string.length;i++){
         //change eachChar to lowerCase
         let eachChar=string[i].toLowerCase();
-        //if eachChar it not alphanumeric and eachChar count in output is greater than 0, increase that eachChar count
+        //if eachChar is alphanumeric and eachChar count in output is greater than 0, increase that eachChar count
         if(output[eachChar] > 0){
             output[eachChar]=++output[eachChar];
         }
-        //if eachChar it not alphanumeric and eachChar count in output is not exists,set eachChar count with 1
+        //if eachChar is alphanumeric and eachChar count in output is not exists,set eachChar count with 1
         if(!output[eachChar] ){
             output[eachChar]=1;
         }
-        // if eachChar in output is alphanumeric,do nothing
+        // if eachChar in output is not alphanumeric,do nothing
     }
     //return output
     return output;
