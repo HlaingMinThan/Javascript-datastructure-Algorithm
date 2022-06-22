@@ -25,32 +25,59 @@
 
 //frequency counter pattern
 
-function getFrequency(arr){
+function getFrequency(data){
     let frequency={};
-    for(let value of arr){
+    for(let value of data){
         frequency[value]=(frequency[value]||0)+1;
     }
     return frequency;
 }
 
-function same(arr1,arr2){
-    let answer;
-    if(arr1.length !== arr2.length){
-            answer=false;
-            return answer;
+// function same(arr1,arr2){
+//     let answer;
+//     if(arr1.length !== arr2.length){
+//             answer=false;
+//             return answer;
+//     }
+//     let frequency1=getFrequency(arr1);
+//     let frequency2=getFrequency(arr2);
+
+//     for(let key in frequency1){
+//         if(!(key**2 in frequency2)){
+//             return false;
+//         }
+//         if(frequency1[key]!==frequency2[key**2]){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// console.log(same([1,2,2,3],[9,1,4,4]));
+
+// problem
+function validAnagram(s1,s2){
+    //prevent the different length first
+    if(s1.length !== s2.length){
+        return false;
     }
-    let frequency1=getFrequency(arr1);
-    let frequency2=getFrequency(arr2);
+    // get frequecies for 2 strings
+    let frequency1=getFrequency(s1);
+    let frequency2=getFrequency(s2);
+
+    
+    // check difference and think for algo to solve
+    console.log(frequency1,frequency2);
 
     for(let key in frequency1){
-        if(!(key**2 in frequency2)){
+        if(!(key in frequency2)){
             return false;
         }
-        if(frequency1[key]!==frequency2[key**2]){
+        if(frequency1[key]!==frequency2[key]){
             return false;
         }
     }
     return true;
 }
 
-console.log(same([1,2,2,3],[9,1,4,4]));
+console.log(validAnagram('anagram','nagaram'));
