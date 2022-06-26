@@ -13,9 +13,9 @@ function sumZero(arr){
         if(sum===0){
             return [arr[left],arr[right]]
         }else if(sum < 0){
-            left++;
+            left++; //if sum is negative,move left side to 1;
         }else{
-            right--;
+            right--;//if sum is positive,move right side back to 1;
         }
     }
 }
