@@ -41,6 +41,9 @@
 //if not move i +1 place and change that index value with j value and then move j 1 place
 
 function countUniqueValues(arr){
+    if(!arr.length){
+        return 0;
+    }
     let i = 0;
     let j=i+1;
     while(j < arr.length){
@@ -53,4 +56,4 @@ function countUniqueValues(arr){
     return i+1;
 }
 
-console.log(countUniqueValues([1,2,3,3,4]));
+console.log(countUniqueValues([]));
