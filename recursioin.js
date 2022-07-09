@@ -13,3 +13,22 @@ sumRange(5);
 //                          return 3 + sumRange(2);
 //                                          return 2 + sumRange(1);
 //                                                          return 1
+
+//iterative way
+// function factorial(num){
+//     let total=1;
+//     for(let i=num;i>0;i--){
+//         total*=i;
+//     }
+//     return total;
+// }
+
+// factorial(3);
+
+//recursive way
+function factorial(num){
+    if(num===1)return 1;
+    return num* factorial(num-1);
+}
+
+console.log(factorial(3));
